@@ -1,0 +1,57 @@
+windows的GitBash窗口建立ssh信任
+$ ssh-keygen -t rsa -C "bourkezhang@qq.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Bourke/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Bourke/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Bourke/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:H6mNEg4Nd32zFV8PiiI0gHKF2DjuxPQ+Os8UlvfsFqA bourkezhang@qq.com
+The key's randomart image is:
++---[RSA 2048]----+
+| + +o.o       o .|
+|=.=  . . . . . +o|
+|++. . o o o + . o|
+| + ..= o . o +   |
+|o .+o.+ S o .    |
+| ..Eoooo = .     |
+|  ... oo+ o      |
+| oo   .o         |
+|  oo  ..         |
++----[SHA256]-----+
+Bourke@BourkePC MINGW64 ~/.ssh
+$ pwd
+/c/Users/Bourke/.ssh
+打开id_rsa.pub文件内容复制到github-->seting-->ssh-->new SSH keys，写上名称 保存既可以。
+
+进入git仓库目录执行
+Bourke@BourkePC MINGW64 ~/Desktop/gitCode (master)
+$ git remote add origin git@github.com:BourkeZhang/MyNote.git
+fatal: remote origin already exists.
+
+Bourke@BourkePC MINGW64 ~/Desktop/gitCode (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 224 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:BourkeZhang/MyNote.git
+ * [new branch]      master -> master
+ Branch master set up to track remote branch master from origin.
+
+ Bourke@BourkePC MINGW64 ~/Desktop/gitCode (master)
+
+
+
+ Bourke@BourkePC MINGW64 ~/Desktop/gitCode (master)
+ $ git config --global user.email "bourkezhang@qq.com"
+
+ Bourke@BourkePC MINGW64 ~/Desktop/gitCode (master)
+ $ git config --global user.name "BourkeZhang"
+ $ git add test.txt
+ $ git commit -m 'test github'
+ $ git log
+
+
+
+
